@@ -23,4 +23,14 @@ public class Guest extends Person {
 		System.out.println("   Email :" + this.email);
 		System.out.println("   Discount :" + this.discount + "%");
 	}
+	public void print(String label) { 
+		System.out.println(label);
+		this.print();
+	}
+	
+	public String toCsv() { 
+		return this.id + "," + this.name + "," + this.email + "," + this.discount;
+		
+		
+	}
 }
