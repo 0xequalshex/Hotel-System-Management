@@ -7,14 +7,9 @@ public enum ReservationStatus {
 
     private final String label;
 
+    ReservationStatus(String label) {this.label = label;}
 
-    ReservationStatus(String label) {
-        this.label = label;
-    }
-
-    public String getLabel() {
-    	return this.label;
-    }
+    public String getLabel() {return this.label;}
 
     @Override
     public String toString() {
