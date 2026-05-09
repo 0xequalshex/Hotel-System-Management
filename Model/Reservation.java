@@ -1,5 +1,5 @@
 package Model;
-import enums.ReservationStatus;
+import Enums.ReservationStatus;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter; 
