@@ -10,13 +10,13 @@ A console-based Java application for managing hotel rooms, guests, employees, an
 HotelManagementSystem/
 ├── Main.java
 ├── Hotel.java
-├── models/
+├── Model/
 │   ├── Person.java
 │   ├── Guest.java
 │   ├── Employee.java
 │   ├── Room.java
 │   └── Reservation.java
-└── enums/
+└── Enums/
     ├── RoomType.java
     ├── JobRole.java
     └── ReservationStatus.java
@@ -26,14 +26,14 @@ HotelManagementSystem/
 |---|---|
 | `Main.java` | Entry point — creates a Hotel object and calls run() |
 | `Hotel.java` | All business logic: login, menu, CRUD operations, file I/O |
-| `models/Person.java` | Abstract base class — Inheritance root for Guest and Employee |
-| `models/Guest.java` | Extends Person — adds discount field |
-| `models/Employee.java` | Extends Person — adds salary and job role |
-| `models/Room.java` | Room data and reserved-dates tracking |
-| `models/Reservation.java` | Links Guest and Room with dates, price, and status |
-| `enums/RoomType.java` | SINGLE, DOUBLE, SUITE — with label and default capacity |
-| `enums/JobRole.java` | MANAGER, RECEPTIONIST, CLEANER, SECURITY — with duty description |
-| `enums/ReservationStatus.java` | PENDING, PAID, CANCELLED — with label |
+| `Model/Person.java` | Abstract base class — Inheritance root for Guest and Employee |
+| `Model/Guest.java` | Extends Person — adds discount field |
+| `Model/Employee.java` | Extends Person — adds salary and job role |
+| `Model/Room.java` | Room data and reserved-dates tracking |
+| `Model/Reservation.java` | Links Guest and Room with dates, price, and status |
+| `Enums/RoomType.java` | SINGLE, DOUBLE, SUITE — with label and default capacity |
+| `Enums/JobRole.java` | MANAGER, RECEPTIONIST, CLEANER, SECURITY — with duty description |
+| `Enums/ReservationStatus.java` | PENDING, PAID, CANCELLED — with label |
 
 ---
 
@@ -43,7 +43,7 @@ HotelManagementSystem/
 
 **Compile:**
 ```bash
-javac enums/*.java models/*.java Hotel.java Main.java
+javac Enums/*.java Model/*.java Hotel.java Main.java
 ```
 
 **Run:**
