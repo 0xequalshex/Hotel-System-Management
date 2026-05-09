@@ -1,5 +1,5 @@
-import models.*;
-import enums.*;
+import Model.*;
+import Enums.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
