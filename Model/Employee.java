@@ -1,4 +1,4 @@
-package enums;
+package Model;
 import enums.JobRole;
 public class Employee extend Person{
 	private double  salary;
