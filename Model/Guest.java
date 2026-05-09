@@ -1,4 +1,4 @@
-package models;
+package Model;
 
 public class Guest extends Person {
 	private int discount;
