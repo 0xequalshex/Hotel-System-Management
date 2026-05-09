@@ -15,55 +15,34 @@ public class Reservation {
 
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-    public Reservation(LocalDate arrivalDate, LocalDate departureDate, double price,
-                       ReservationStatus status, Guest guest, Room room) {
-        this.arrivalDate   = arrivalDate;
+    public Reservation(LocalDate arrivalDate, LocalDate departureDate, double price,ReservationStatus status, Guest guest, Room room) {
+        this.arrivalDate = arrivalDate;
         this.departureDate = departureDate;
-        this.price         = price;
-        this.status        = status;
-        this.guest         = guest;
-        this.room          = room;
+        this.price = price;
+        this.status = status;
+        this.guest = guest;
+        this.room = room;
     }
 
     public Reservation() {}
 
-    public LocalDate         getArrivalDate()   { 
-    	return this.arrivalDate;   
-    }
-    public LocalDate         getDepartureDate() { 
-    	return this.departureDate; 
-    }
-    public double            getPrice()         { 
-    	return this.price;         
-    }
-    public ReservationStatus getStatus()        { 
-    	return this.status;       
-    }
-    public Guest             getGuest()         { 
-    	return this.guest;         
-    }
-    public Room   getRoom()          { return this.room;          }
-    public String getArrivalDateStr()   { return this.arrivalDate.format(FORMATTER);   }
-    public String getDepartureDateStr() { return this.departureDate.format(FORMATTER); }
+   	public void setArrivalDate(LocalDate arrivalDate) {this.arrivalDate = arrivalDate;}
+    public void setDepartureDate(LocalDate departureDate) {this.departureDate = departureDate;}
+    public void setPrice(double price) { this.price = price;}
+    public void setStatus(ReservationStatus status) {this.status = status;}
+    public void setGuest(Guest guest) { this.guest = guest;}
+    public void setRoom(Room room) { this.room = room;}
 
-    public void setArrivalDate(LocalDate d)    { 
-    	this.arrivalDate   = d; 
-    }
-    public void setDepartureDate(LocalDate d)  { 
-    	this.departureDate = d; 
-    }
-    public void setPrice(double price)         { 
-    	this.price         = price;  
-    }
-    public void setStatus(ReservationStatus s) { 
-    	this.status        = s;     
-    }
-    public void setGuest(Guest g)              {
-this.guest         = g;     
-    }
-    public void setRoom(Room r)                {
-    	this.room          = r;    
-}
+    public LocalDate getArrivalDate() {return this.arrivalDate;}
+    public LocalDate getDepartureDate() {return this.departureDate;}
+    public double getPrice() {return this.price;}
+    public ReservationStatus getStatus() {return this.status;}
+    public Guest getGuest() {return this.guest;}
+    public Room getRoom() {return this.room;}
+
+    public String getArrivalDateStr() {return this.arrivalDate.format(FORMATTER);}
+    public String getDepartureDateStr() {return this.departureDate.format(FORMATTER);}
+
 
     public long getNights() {
         return ChronoUnit.DAYS.between(this.arrivalDate, this.departureDate);
@@ -79,7 +58,16 @@ this.guest         = g;
         System.out.println("  Status    : " + this.status.getLabel());
     }
 
-
+	public void print(boolean detailed) {
+        this.print();
+        if (detailed) {
+            System.out.println("  --- Guest Details ---");
+            this.guest.print();
+            System.out.println("  --- Room Details ---");
+            this.room.print();
+        }
+    }
+	
     public String toCsv() {
         return this.getArrivalDateStr() + "," + this.getDepartureDateStr() + ","
              + this.price + "," + this.status.name() + ","
