@@ -1,6 +1,6 @@
 package Model;
-import enums.JobRole;
-public class Employee extend Person{
+import Enums.JobRole;
+public class Employee extends Person{
 	private double  salary;
     private JobRole job;
 
