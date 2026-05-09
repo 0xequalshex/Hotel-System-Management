@@ -17,15 +17,13 @@ public class Room {
 
     private List<String> reservedDates;
 
-    private static final DateTimeFormatter DATE_FORMAT =
-            DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    private static final DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     public Room() {
         reservedDates = new ArrayList<>();
     }
 
-    public Room(int id, int floor, int capacity,
-                RoomType type, String description, double price) {
+    public Room(int id, int floor, int capacity, RoomType type, String description, double price) {
         this.id = id;
         this.floor = floor;
         this.capacity = capacity;
@@ -34,24 +32,22 @@ public class Room {
         this.price = price;
         this.reservedDates = new ArrayList<>();
     }
+    
+    public void setFloor(int floor) {this.floor = floor;}
+    public void setCapacity(int capacity) {this.capacity = capacity;}
+    public void setType(RoomType type) {this.type = type;}
+    public void setDescription(String description) {this.description = description;}
+    public void setPrice(double price) {this.price = price;}
+
+    public int getId() {return id;}
+    public int getFloor() {return floor;}
+    public int getCapacity() {return capacity;}
+    public RoomType getType() {return type;}
+    public String getDescription() {return description;}
+    public double getPrice() {return price;}
+    public List<String> getReservedDates() {return reservedDates;}
 
 
-    public int getId() { return id; }
-    public int getFloor() { return floor; }
-    public int getCapacity() { return capacity; }
-    public RoomType getType() { return type; }
-    public String getDescription() { return description; }
-    public double getPrice() { return price; }
-    public List<String> getReservedDates() { return reservedDates; }
-
-
-    public void setFloor(int floor) { this.floor = floor; }
-    public void setCapacity(int capacity) { this.capacity = capacity; }
-    public void setType(RoomType type) { this.type = type; }
-    public void setDescription(String description) { this.description = description; }
-    public void setPrice(double price) { this.price = price; }
-
-    // --- Methods ---
     public void reserve(LocalDate checkIn, LocalDate checkOut) {
         LocalDate current = checkIn;
         while (current.isBefore(checkOut)) {
@@ -89,13 +85,9 @@ public class Room {
     }
 
     public String toCsv() {
-        String allDates = String.join(";", reservedDates);
-        return id + "," +
-                floor + "," +
-                capacity + "," +
-                type.name() + "," +
-                description + "," +
-                price + "," +
-                allDates;
+        String dates = String.join(";", this.reservedDates);
+        return this.id + "," + this.floor + "," + this.capacity + ","
+             + this.type.name() + "," + this.description + ","
+             + this.price + "," + dates;
     }
 }
