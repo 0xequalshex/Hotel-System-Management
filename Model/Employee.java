@@ -13,20 +13,13 @@ public class Employee {
     public Employee() {
         super();
     }
+	
+    public void setSalary(double salary) {this.salary = salary;}
+    public void setJob(JobRole job) {this.job = job;}
 
-    public double  getSalary()              { 
-    	return this.salary; 
-    }
-    public JobRole getJob()                 {
-    	return this.job;    
-    }
+    public double  getSalary() {return this.salary;}
+    public JobRole getJob() {return this.job;}
     
-    public void    setSalary(double salary) { 
-    	this.salary = salary; 
-    }
-    public void    setJob(JobRole job)      {
-    	this.job = job;    
-    }
 
     public void performDuties() {
         System.out.println("  " + this.name + " [" + this.job.getLabel() + "]: " + this.job.getDuty());
@@ -39,6 +32,14 @@ public class Employee {
         System.out.println("  Email  : " + this.email);
         System.out.println("  Salary : $" + this.salary);
         System.out.println("  Job    : " + this.job.getLabel());
+    }
+
+	public void print(boolean showDuty) {
+        this.print();
+        if (showDuty) {
+            System.out.print("  Duty   : ");
+            this.performDuties();
+        }
     }
 
     public String toCsv() {
