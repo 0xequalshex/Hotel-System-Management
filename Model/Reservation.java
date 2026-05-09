@@ -1,4 +1,4 @@
-package enums;
+package Model;
 import enums.ReservationStatus;
 
 import java.time.LocalDate;
