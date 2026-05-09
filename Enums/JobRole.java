@@ -1,4 +1,4 @@
-package enums;
+package Enums;
 
 public enum JobRole {
 	MANAGER      ("Manager",      "Managing and overseeing all hotel operations"),
