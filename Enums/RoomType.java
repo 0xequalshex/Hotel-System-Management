@@ -2,30 +2,23 @@ package enums;
 
 public enum RoomType {
 
-    SINGLE_ROOM("Single Room", 1),
-    DOUBLE_ROOM("Double Room", 2),
-    FAMILY_SUITE("Family Suite", 5),
-    ROYAL_SUITE("Royal Suite", 8);
+    SINGLE ("Single Room", 1),
+    DOUBLE ("Double Room", 2),
+    SUITE  ("Suite",       6);
 
-    private String title;
-    private int capacity;
+    private final String label;
+    private final int defaultCapacity;
 
-    RoomType(String title, int capacity) {
-
-        this.title = title;
-        this.capacity = capacity;
+    RoomType(String label, int defaultCapacity) {
+        this.label           = label;
+        this.defaultCapacity = defaultCapacity;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public int getCapacity() {
-        return capacity;
-    }
+    public String getLabel() {return this.label;}
+    public int getDefaultCapacity() {return this.defaultCapacity;}
 
     @Override
     public String toString() {
-        return title;
+        return this.label;
     }
 }
