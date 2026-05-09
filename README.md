@@ -76,18 +76,21 @@ private static final String PASSWORD = "11037";
 The main menu has 18 options organized into four groups:
 
 **Rooms**
+
 1. Add new room
 2. Show all rooms
 3. Show rooms by type
 4. Edit room
 
 **Guests**
+
 5. Show all guests
 6. Search guest by name
 7. Search guest by ID
 8. Edit guest
 
 **Reservations**
+
 9. Create new reservation
 10. Show all reservations (summary)
 11. Show all reservations (detailed)
@@ -97,6 +100,7 @@ The main menu has 18 options organized into four groups:
 15. Cancel reservation
 
 **Employees**
+
 16. Add new employee
 17. Show all employees
 18. Edit employee
