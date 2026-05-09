@@ -18,7 +18,5 @@ public enum RoomType {
     public int getDefaultCapacity() {return this.defaultCapacity;}
 
     @Override
-    public String toString() {
-        return this.label;
-    }
+    public String toString() {return this.label;}
 }
